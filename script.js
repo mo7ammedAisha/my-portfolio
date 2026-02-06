@@ -204,32 +204,6 @@ sections.forEach(section => {
     sectionObserver.observe(section);
 });
 
-// Particle effect on mouse move (subtle)
-let particles = [];
-const particleCount = 50;
-
-class Particle {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.size = Math.random() * 2 + 1;
-        this.speedX = Math.random() * 2 - 1;
-        this.speedY = Math.random() * 2 - 1;
-        this.life = 100;
-    }
-    
-    update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        this.life -= 2;
-    }
-    
-    draw(ctx) {
-        ctx.fillStyle = `rgba(0, 255, 65, ${this.life / 100})`;
-        ctx.fillRect(this.x, this.y, this.size, this.size);
-    }
-}
-
 // Add subtle glow effect to buttons
 document.querySelectorAll('.btn').forEach(btn => {
     btn.addEventListener('mouseenter', function(e) {
